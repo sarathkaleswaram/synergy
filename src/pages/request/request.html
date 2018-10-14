@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <img height="45" width="auto" style="padding-left: 5%;" src="assets/imgs/synergy.png" />
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Meeting Space</ion-label>
+      <ion-checkbox [(ngModel)]="meetingSpace"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="meetingSpace">
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" max="2020-12-31" pickerFormat="DD/MMM/YYYY" [(ngModel)]="meetingSpaceDate"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="meetingSpace">
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="hh:mm A" [(ngModel)]="meetingSpaceTime"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cafeteria</ion-label>
+      <ion-checkbox [(ngModel)]="cafeteria"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="cafeteria">
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" max="2020-12-31" pickerFormat="DD/MMM/YYYY" [(ngModel)]="cafeteriaDate"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="cafeteria">
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="hh:mm A" pickerFormat="hh:mm A" [(ngModel)]="cafeteriaTime"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Food/Beverages</ion-label>
+      <ion-checkbox [(ngModel)]="food_beverages"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="food_beverages">
+      <ion-label>Items:</ion-label>
+      <ion-textarea [(ngModel)]="items"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button round [disabled]="!meetingSpace && !cafeteria && !food_beverages" color="dark" (click)="book()">Book</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

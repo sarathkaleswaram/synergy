@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeOfferPage } from '../pages/we-offer/we-offer';
+import { RequestPage } from '../pages/request/request';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WeOfferPage } from '../pages/we-offer/we-offer';
     ContactPage,
     HomePage,
     TabsPage,
-    WeOfferPage
+    WeOfferPage,
+    RequestPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { WeOfferPage } from '../pages/we-offer/we-offer';
     ContactPage,
     HomePage,
     TabsPage,
-    WeOfferPage
+    WeOfferPage,
+    RequestPage
   ],
   providers: [
     StatusBar,

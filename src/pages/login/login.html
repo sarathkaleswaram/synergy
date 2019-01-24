@@ -1,0 +1,21 @@
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col>
+      <img height="45" src="assets/imgs/synerge.png" />
+    </ion-col>
+  </ion-row>
+  <div class="login-box">
+    <ion-row>
+      <ion-col class="register-btn">
+        <ion-list inset>
+          Welcome {{name}}
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="signup-col">
+        <button ion-button class="submit-btn" full (click)="login()">Login</button>
+      </ion-col>
+    </ion-row>
+  </div>

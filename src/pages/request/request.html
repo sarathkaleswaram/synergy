@@ -1,23 +1,35 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <img height="45" width="auto" style="padding-left: 5%;" src="assets/imgs/synergy.png" />
+  <ion-navbar color="synerge">
+    <img
+      height="45"
+      width="auto"
+      style="padding-left: 5%;"
+      src="assets/imgs/synerge.png"
+    />
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-
     <ion-item>
       <ion-label>Meeting Space</ion-label>
       <ion-checkbox [(ngModel)]="meetingSpace"></ion-checkbox>
     </ion-item>
     <ion-item *ngIf="meetingSpace">
       <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="DD/MMM/YYYY" max="2020-12-31" pickerFormat="DD/MMM/YYYY" [(ngModel)]="meetingSpaceDate"></ion-datetime>
+      <ion-datetime
+        displayFormat="DD/MMM/YYYY"
+        max="2020-12-31"
+        pickerFormat="DD/MMM/YYYY"
+        [(ngModel)]="meetingSpaceDate"
+      ></ion-datetime>
     </ion-item>
     <ion-item *ngIf="meetingSpace">
       <ion-label>Time</ion-label>
-      <ion-datetime displayFormat="hh:mm A" [(ngModel)]="meetingSpaceTime"></ion-datetime>
+      <ion-datetime
+        displayFormat="hh:mm A"
+        [(ngModel)]="meetingSpaceTime"
+      ></ion-datetime>
     </ion-item>
 
     <ion-item>
@@ -26,11 +38,20 @@
     </ion-item>
     <ion-item *ngIf="cafeteria">
       <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="DD/MMM/YYYY" max="2020-12-31" pickerFormat="DD/MMM/YYYY" [(ngModel)]="cafeteriaDate"></ion-datetime>
+      <ion-datetime
+        displayFormat="DD/MMM/YYYY"
+        max="2020-12-31"
+        pickerFormat="DD/MMM/YYYY"
+        [(ngModel)]="cafeteriaDate"
+      ></ion-datetime>
     </ion-item>
     <ion-item *ngIf="cafeteria">
       <ion-label>Time</ion-label>
-      <ion-datetime displayFormat="hh:mm A" pickerFormat="hh:mm A" [(ngModel)]="cafeteriaTime"></ion-datetime>
+      <ion-datetime
+        displayFormat="hh:mm A"
+        pickerFormat="hh:mm A"
+        [(ngModel)]="cafeteriaTime"
+      ></ion-datetime>
     </ion-item>
 
     <ion-item>
@@ -41,13 +62,31 @@
       <ion-label>Items:</ion-label>
       <ion-textarea [(ngModel)]="items"></ion-textarea>
     </ion-item>
-
   </ion-list>
 
   <ion-row center>
     <ion-col text-center>
-      <button ion-button round [disabled]="!meetingSpace && !cafeteria && !food_beverages" color="dark" (click)="book()">Book</button>
+      <button
+        ion-button
+        round
+        [disabled]="!meetingSpace && !cafeteria && !food_beverages"
+        color="dark"
+        (click)="book()"
+      >
+        Book
+      </button>
     </ion-col>
   </ion-row>
 
+  <p style="font-weight: bolder" text-center *ngIf="emailSentMessageShow">
+    Details Sent Successfully.
+  </p>
+  <p style="font-weight: bolder" text-center *ngIf="emailSentMessageShow">
+    Our Assistant Will Call You Shortly For Conformation.
+  </p>
 </ion-content>
+
+<ion-footer style="font-weight: bold" text-center>
+  <p>Delayed In Reaching You? Feel Free To Call Us.</p>
+  <h5>WE ARE HAPPY TO SYNERGE WITH YOU</h5>
+</ion-footer>

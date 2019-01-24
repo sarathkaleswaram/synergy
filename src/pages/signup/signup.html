@@ -1,0 +1,35 @@
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col>
+      <img height="45" src="assets/imgs/synerge.png" />
+    </ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form [formGroup]="form" (ngSubmit)="signup()">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-input type="text" placeholder="First Name" formControlName="firstName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Last Name" formControlName="lastName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" placeholder="Phone" formControlName="phone"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!form.valid">Set Pincode</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>
